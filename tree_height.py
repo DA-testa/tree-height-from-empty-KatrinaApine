@@ -2,7 +2,6 @@
 
 import sys
 import threading
-import numpy
 
 def compute_height(n, parents):
     # Write this function
@@ -48,16 +47,16 @@ def main():
                 print("file can not contain letter a")
                 return 
 
-            try:
-                with open(files) as F:
+        try:
+            with open(files) as F:
 
-                    n = int(F.readline())
-                    parents = list(map(int, F.readline().split()))
-                    break
+                n = int(F.readline())
+                parents = list(map(int, F.readline().split()))
+                break
 
-            except FileNotFoundError:
-                print("file is not found")
-                return 
+        except FileNotFoundError:
+            print("file is not found")
+            return 
 
     print(compute_height(n, parents))
 
