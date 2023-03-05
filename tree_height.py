@@ -40,7 +40,7 @@ def main():
             break
 
         elif inp == 'F':
-            files = input()
+            files = "test/" + input()
 
             if 'a' in files:
                 #print("file can not contain letter a")
