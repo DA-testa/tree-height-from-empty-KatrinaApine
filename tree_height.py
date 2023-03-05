@@ -2,13 +2,21 @@
 
 import sys
 import threading
-import numpy
+
 
 
 def compute_height(n, parents):
     # Write this function
     max_height = 0
     # Your code here
+
+    for node in range (n):
+        h = 0
+        
+        while node != -1:
+            h += 1
+            node = parents[node]
+        max_height = max(max_height, h) 
     return max_height
 
 
@@ -29,5 +37,3 @@ def main():
 sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
-main()
-# print(numpy.array([1,2,3]))
