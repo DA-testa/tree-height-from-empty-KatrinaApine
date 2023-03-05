@@ -34,7 +34,7 @@ def main():
         #print("input from keyboard or file (I or F)")
         inp = input()
 
-        if inp == 'I':
+        if 'I' in inp:
 
             n = int(input())
             parents = list(map(int, input().split()))
@@ -42,7 +42,7 @@ def main():
             print(compute_height(n, parents))
             break
 
-        if inp == 'F':
+        if 'F' in inp:
             files = "test/" + input()
 
             if 'a' in files:
