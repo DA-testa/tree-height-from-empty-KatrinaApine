@@ -31,15 +31,15 @@ def main():
     while True:
 
         #print("input from keyboard or file (I or F)")
-        inp = input()
+        #inp = input()
 
-        if inp == 'I':
+#         if inp == 'I':
 
-            n = int(input())
-            parents = list(map(int, input().split()))
-            break
+#             n = int(input())
+#             parents = list(map(int, input().split()))
+#             break
 
-        elif inp == 'F':
+#         elif inp == 'F':
             files = "test/" + input()
 
             if 'a' in files:
