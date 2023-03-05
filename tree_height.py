@@ -2,6 +2,7 @@
 
 import sys
 import threading
+import numpy
 
 def compute_height(n, parents):
     # Write this function
@@ -31,7 +32,7 @@ def main():
     #print("input from keyboard or file (I or F)")
     while True:
 
-        print("input from keyboard or file (I or F)")
+        #print("input from keyboard or file (I or F)")
         inp = input()
 
         if inp == 'I':
@@ -41,7 +42,7 @@ def main():
             break
 
         elif inp == 'F':
-            files = "test/ " + input()
+            files = "test/" + input()
 
             if 'a' in files:
                 print("file can not contain letter a")
