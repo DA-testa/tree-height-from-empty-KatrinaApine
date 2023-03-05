@@ -33,8 +33,17 @@ def main():
 
         #print("input from keyboard or file (I or F)")
         inp = input()
-        
-        files = "test/" + input()
+
+        if inp == 'I':
+
+            n = int(input())
+            parents = list(map(int, input().split()))
+            
+            print(compute_height(n, parents))
+            break
+
+        if inp == 'F':
+            files = "test/" + input()
 
             if 'a' in files:
                 #print("file can not contain letter a")
@@ -52,34 +61,6 @@ def main():
             except FileNotFoundError:
                 print("file is not found")
                 return 
-
-#         if inp == 'I':
-
-#             n = int(input())
-#             parents = list(map(int, input().split()))
-            
-#             print(compute_height(n, parents))
-#             break
-
-#         elif inp == 'F':
-#             files = "test/" + input()
-
-#             if 'a' in files:
-#                 #print("file can not contain letter a")
-#                 return 
-
-#             try:
-#                 with open(files) as F:
-
-#                     n = int(F.readline())
-#                     parents = list(map(int, F.readline().split()))
-                    
-#                     print(compute_height(n, parents))
-#                     break
-
-#             except FileNotFoundError:
-#                 print("file is not found")
-#                 return 
 
     #print(compute_height(n, parents))
 
