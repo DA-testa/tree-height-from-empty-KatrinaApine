@@ -32,7 +32,10 @@ def main():
     while True:
 
         #print("input from keyboard or file (I or F)")
-        inp = input()
+        try:
+            inp = input()
+        except EOFError:
+            return
 
         if 'I' in inp:
 
@@ -72,4 +75,3 @@ def main():
 sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
-
