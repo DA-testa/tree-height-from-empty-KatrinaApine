@@ -3,8 +3,6 @@
 import sys
 import threading
 
-
-
 def compute_height(n, parents):
     # Write this function
     max_height = 0
@@ -29,6 +27,39 @@ def main():
     # input number of elements
     # input values in one variable, separate with space, split these values in an array
     # call the function and output it's result
+    
+    while True:
+
+        print("input from keyboard or file (I or F)")
+        inp = input()
+
+        if inp == 'I':
+
+            n = int(input())
+            parents = list(map(int, input().split()))
+            break
+
+        elif inp == 'F':
+            files = input()
+
+            if 'a' in files:
+                print("file can not contain letter a")
+                return 
+
+            try:
+                with open(files) as F:
+
+                    n = int(F.readline())
+                    parents = list(map(int, F.readline().split()))
+                    break
+
+            except FileNotFoundError:
+                print("file is not found")
+                return 
+
+    h = compute_height(n, parents)
+
+    print(h)
 
 
 # In Python, the default limit on recursion depth is rather low,
