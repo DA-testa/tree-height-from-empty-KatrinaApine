@@ -45,20 +45,24 @@ def main():
 
             if 'a' in files:
                 print("file can not contain letter a")
+                
+                print(compute_height(n, parents))
                 return 
 
-        try:
-            with open(files) as F:
+            try:
+                with open(files) as F:
 
-                n = int(F.readline())
-                parents = list(map(int, F.readline().split()))
-                break
+                    n = int(F.readline())
+                    parents = list(map(int, F.readline().split()))
+                    
+                    print(compute_height(n, parents))
+                    break
 
-        except FileNotFoundError:
-            print("file is not found")
-            return 
+            except FileNotFoundError:
+                print("file is not found")
+                return 
 
-    print(compute_height(n, parents))
+    #print(compute_height(n, parents))
 
 
 
