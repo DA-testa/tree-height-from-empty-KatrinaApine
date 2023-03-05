@@ -38,15 +38,15 @@ def main():
 
             n = int(input())
             parents = list(map(int, input().split()))
+            
+            print(compute_height(n, parents))
             break
 
         elif inp == 'F':
-            files = "/" + input()
+            files = input()
 
             if 'a' in files:
-                print("file can not contain letter a")
-                
-                print(compute_height(n, parents))
+                #print("file can not contain letter a")
                 return 
 
             try:
