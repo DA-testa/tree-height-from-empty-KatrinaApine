@@ -29,36 +29,36 @@ def main():
     # call the function and output it's result
     
     #print("input from keyboard or file (I or F)")
-    inp = input()
+    while True:
 
-    if inp == 'I':
+        print("input from keyboard or file (I or F)")
+        inp = input()
 
-        n = int(input())
-        parents = list(map(int, input().split()))
-        #break
+        if inp == 'I':
 
-    elif inp == 'F':
-        files = "test/" + input()
+            n = int(input())
+            parents = list(map(int, input().split()))
+            break
 
-        if 'a' in files:
-            print("file can not contain letter a")
-            return 
+        elif inp == 'F':
+            files = "test/ " + input()
 
-        try:
-            with open(files) as F:
+            if 'a' in files:
+                print("file can not contain letter a")
+                return 
 
-                n = int(F.readline())
-                parents = list(map(int, F.readline().split()))
-                #break
+            try:
+                with open(files) as F:
 
-        except FileNotFoundError:
-            print("file is not found")
-            return
+                    n = int(F.readline())
+                    parents = list(map(int, F.readline().split()))
+                    break
 
-    k = compute_height(n, parents)
+            except FileNotFoundError:
+                print("file is not found")
+                return 
 
-    print(k)
-    return
+    print(compute_height(n, parents))
 
 
 
