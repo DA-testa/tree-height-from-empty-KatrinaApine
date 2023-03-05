@@ -30,7 +30,7 @@ def main():
     
     while True:
 
-        print("input from keyboard or file (I or F)")
+        #print("input from keyboard or file (I or F)")
         inp = input()
 
         if inp == 'I':
@@ -43,7 +43,7 @@ def main():
             files = input()
 
             if 'a' in files:
-                print("file can not contain letter a")
+                #print("file can not contain letter a")
                 return 
 
             try:
@@ -54,7 +54,7 @@ def main():
                     break
 
             except FileNotFoundError:
-                print("file is not found")
+                #print("file is not found")
                 return 
 
     h = compute_height(n, parents)
