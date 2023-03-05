@@ -4,17 +4,30 @@ import sys
 import threading
 
 def compute_height(n, parents):
-    # Write this function
+    h = [0] * n
     max_height = 0
-    # Your code here
 
-    for node in range (n):
-        h = 0
-        
+    for node in range(n):
+        if h[node] != 0:
+            continue
+
+        h1 = 0
         while node != -1:
-            h += 1
+            if h[node] != 0:
+                h1 += h[node]
+                break
+            h1 += 1
             node = parents[node]
-        max_height = max(max_height, h) 
+
+        max_height = max(max_height, h1)
+        node = parents[node]
+        while node != -1:
+            if h[node] != 0:
+                break
+            h[node] = h1
+            h1 -= 1
+            node = parents[node]
+
     return max_height
 
 
